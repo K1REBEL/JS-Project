@@ -30,16 +30,21 @@ eBazar
 <!-- Start menu-bar -->
 <div class="menu">
     <div class="containerOfMenu">
-    <ul class="shuffle">
-        <li><a class="all">All</a></li>
-        <li class="mobiles"><a>Mobiles</a></li>
-        <li><a class="laptops" >Laptops</a></li>
-    </ul>
+        <div class = "filter-btns">
+            <button type="button" class="filter-btn" id="all">All</button>
+            <button type="button" class="filter-btn" id="mobiles">Mobiles</button>
+            <button type="button" class="filter-btn" id="laptops">Laptops</button>
+        </div>
+    <!-- <ul class="shuffle">
+        <li><button class="all" class = "filter-btn">All</button></li>
+        <li><button class="mobiles" class = "filter-btn">Mobiles</button></li>
+        <li><button class="laptops" class = "filter-btn">Laptops</button></li>
+    </ul> -->
 </div>
 </div>
 <!-- End Menu-bar -->
 <!-- Start Product -->
-<div class="product"><div class="box">
+<div class="product filter-item all mobiles"><div class="box">
     <div class="image">
         <img src="./images/1.jpg" alt="Mobile Photo">
     </div>
@@ -63,7 +68,7 @@ eBazar
 
 <!-- End Product -->
 <!-- Start Product -->
-<div class="product"><div class="box">
+<div class="product filter-item all mobiles"><div class="box">
     <div class="image">
         <img src="./images/Galaxy M34 5G_.jpg" alt="Mobile Photo">
     </div>
@@ -85,7 +90,7 @@ eBazar
 
 <!-- End Product -->
 <!-- Start Product -->
-<div class="product"><div class="box">
+<div class="product filter-item all laptops"><div class="box">
     <div class="image">
         <img src="./images/61oq9-95KHS._AC_UF894,1000_QL80_.jpg" alt="Mobile Photo">
     </div>
@@ -107,7 +112,7 @@ High Quality
 
 <!-- End Product -->
 <!-- Start Product -->
-<div class="product"><div class="box">
+<div class="product filter-item all mobiles"><div class="box">
     <div class="image">
         <img src="./images/81fO2C9cYjL._AC_UF894,1000_QL80_.jpg" alt="Mobile Photo">
     </div>
@@ -126,7 +131,7 @@ High Quality
 
 <!-- End Product -->
 <!-- Start Product -->
-<div class="product"><div class="box">
+<div class="product filter-item all laptops"><div class="box">
     <div class="image">
         <img src="./images/61oq9-95KHS._AC_UF894,1000_QL80_.jpg" alt="Mobile Photo">
     </div>
@@ -170,5 +175,6 @@ NVIDIA® GeForce RTX™ 3050 Laptop GPU (4 GB GDDR6 dedicated)
     </div>
 </footer>
 <!-- End Footer -->
+<script src="../filter.js"></script>
 </body>
 </html>
