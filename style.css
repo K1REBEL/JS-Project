@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #ecefec;
+    color: #495057;
+}
+
+.login-container, .signup-container {
+    max-width: 600px;
+    margin: auto;
+    margin-top: 100px;
+}
+
+.login-form, .signup-form {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px 0px #888888;
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    font-size: 14px;
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    color: #495057;
+    transition: transform 0.3s, font-size 0.3s, color 0.3s;
+    background-color: #ffffff;
+    padding: 0 5px;
+}
+
+.form-control {
+    background-color: #ffffff;
+    border: 1px solid #ced4da;
+    color: #495057;
+    padding: 15px;
+    border-radius: 15px; 
+    transition: border-color 0.3s;
+    width: 100%; 
+}
+
+.form-control:focus+.label-float,
+.form-control:not(:placeholder-shown)+.label-float {
+    transform: translateY(-20px);
+    font-size: 12px;
+    color: #007bff;
+}
+
+.btn-login,
+.btn-signup {
+    font-size: 14px;
+    font-weight: 100;
+    letter-spacing: 1px;
+    padding: 13px 20px 13px;
+    outline: 0;
+    border: 1px solid black;
+    cursor: pointer;
+    margin-left: 0;
+    background-color: #3ea23e;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    border-radius: 15px; 
+    color: #fff;
+}
+
+.btn-login.button-signup:after,
+.btn-signup.button-signup:after {
+    content: "";
+    background-color: #236023;
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+    height: 100%;
+    top: 7px;
+    left: 7px;
+    transition: 0.2s;
+}
+
+.button-signup:hover:after,
+.btn-signup:hover:after {
+    top: 0px;
+    left: 0px;
+}
+
+@media (min-width: 768px) {
+    .button-signup {
+        padding: 13px 50px 13px;
+    }
+}
+
+.signup-link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.signup-link a {
+    color: #418542;
+}
