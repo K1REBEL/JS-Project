@@ -13,7 +13,7 @@ login.onclick = (e) =>{
 
     if (emailAddress == "" && passwordAddress == ""){
         swal("please insert a value for the inputField")
-        
+         isUserLoggedIn = true;
     }
     else{
         if(emailAddress == getEmail && passwordAddress == getpassword){
@@ -23,7 +23,7 @@ login.onclick = (e) =>{
             swal("Something wrong , please try again ")
         }
     }
-    isUserLoggedIn = true;
+   
 
 }
 //settimeoutfunctionality Task
