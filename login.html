@@ -1,72 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Log in </title>
-    <link rel="stylesheet" href="css/normalize.css">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="css/all.min.css">
- <!-- Google Fonts -->
- <link rel="preconnect" href="https://fonts.googleapis.com/">
- <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
- <link rel="stylesheet" href="./css/login.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>login</title>
+    <style>
+       
+    </style>
 </head>
 <body>
-     <!-- Start Header -->
-<div class="header" id="header">
+
     <div class="container">
-        <a href="./jsproject.html" target="_blank" class="logo">
-            eBazar
-        <i class="fa-solid fa-cart-shopping"></i>
-        </a>       
-    <ul class="main-nav">
-        <li><a target="_blank" href="jsproject.html">Home</a></li>
-        <li><a target="_blank" href="signup.html">Sign Up</a></li>
-    </ul>
-    </div>    
-    </div>
-    <hr>
-         <!-- End Header -->
-
-    <div class="wrapper">
-            <form action="#">
-                <h2>Login Here</h2>
-                <div class="input-box">
-                    <input type="email" placeholder="example@abc.com" required>
-                    <i class="fa-solid fa-ellipsis"></i>
-                    </div>
-                                    <div class="input-box">
-                    <input type="password" placeholder="Password" required>
-                    <i class="fa-solid fa-ellipsis"></i>  
-                    </div>   
-                               <button type="submit" class="btn">Login</button>
-            </form>
+     <div class="row justify-content-center">
+      <div class="col-l-8 col-md-10 col-12">
+       <div class="login-container">
+        <div class="login-form">
+         <h2 class="text-center mb-4">LOGIN</h2>
+        <form id="form">
+         <div class="form-group">
+          <input type="email" class="form-control" id="inputEmail" placeholder=" ">
+          <label for="inputEmail" class="label-float">Email Address</label>
+         </div>
+         <div class="form-group">
+          <input type="password" class="form-control" id="inputPassword" placeholder=" ">
+           <label for="inputPassword" class="label-float">Password</label>
+         </div>
+       <button type="submit"  class="btn btn-success btn-login btn-block" id="login">Login</button>
+         <div class="signup-link">
+         <p>Don't have an account? <a href="signup.html">Sign up</a></p>
+         </div>
+        </form>
         </div>
-
-            <!-- Start Footer -->
-            <footer class="footer">
-                <div class="container">
-                    <div class="socials">
-                        Follow Us On :
-                        <a href="https://www.facebook.com/eBaazar.com.bd"  target="_blank"><i class="fa-brands fa-facebook"></i></a>
-                        <a href="https://twitter.com/Ebazar728"  target="_blank"><i class="fa-brands fa-twitter"></i></a>
-                        <a href="https://www.instagram.com/ebazar724/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="https://ebazarninja.tumblr.com/"><i class="fa-brands fa-tumblr"></i></a>
-                    </div>
-                    <div class="dial">Call Us Toll Free on : +91 99-9999-9999 </div>
-                    <div class="mail">
-                        For offers and newsletter:
-                        <input type="text" placeholder="example@abc.com">
-                    </div>
-                </div>
-                <hr>
-                <div class="end-text">
-                    <p>Design & developed by Rishi Raj | Copyright 2019 |<a href="#">Privacy Policy</a>  |<a href="">Return Policy</a> </p>
-                </div>
-            </footer>
-            <!-- End Footer -->
+       </div>
+      </div>
+     </div>
+    </div>
+    <!-- sweetalert is a library for alert styles -->
+    <script src="javascript/sweetalert.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="javascript/login.js"></script>
 </body>
-
-
 </html>
