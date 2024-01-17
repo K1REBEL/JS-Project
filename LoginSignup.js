@@ -6,6 +6,7 @@ class User {
       this.password = password
       this.money = money
       this.logged_in = false
+      this.cart = []
       this.card = null
    }
    buy() {
@@ -17,7 +18,7 @@ class User {
    }
 }
  
-let users = JSON.parse(localStorage.getItem("users")) || [];
+let users = JSON.parse(localStorage.getItem("users")) || []
  
 function signup(email, username, password, money) {
    const newUser = new User(email, username, password, money)
