@@ -45,3 +45,4 @@ var currentUser = login("user5@example.com", "password5")
 console.log(currentUser)
 setTimeout(() => currentUser.logout(), 360000)
 
+export {currentUser};
