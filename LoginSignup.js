@@ -6,9 +6,14 @@ class User {
       this.password = password
       this.money = money
       this.logged_in = false
+      this.card = null
    }
    buy() {
-     // To be further developed.
+      // To be further developed.
+   }
+   logout() {
+      this.logged_in = false
+      console.log(`User ${this.username} logged out due to inactivity.`)
    }
 }
  
@@ -23,19 +28,19 @@ function signup(email, username, password, money) {
 function login(email, password) {
    for (let i = 0; i < users.length; i++) {
       if (email == users[i].email && password == users[i].password) {
-         console.log(`Login successful! Welcome ${users[i].username}.`)
          users[i].logged_in = true
-         setTimeout(() => {
-            users[i].logged_in = false
-            console.log(`User ${users[i].username} logged out due to inactivity.`)
-         }, 3600000)
-         return
+         localStorage.setItem("users", JSON.stringify(users))
+         console.log(`Login successful! Welcome ${users[i].username}.`)
+         return users[i]
       }
    }
    console.log("Invalid email or password.")
+   return null;
 }
  
- // Sample usage
+   // Sample usage
 signup("user5@example.com", "user5", "password5", 500)
-login("user5@example.com", "password5")
- 
+var currentUser = login("user5@example.com", "password5")
+console.log(currentUser)
+setTimeout(() => currentUser.logout(), 360000)
+
