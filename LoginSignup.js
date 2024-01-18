@@ -9,13 +9,18 @@ class User {
       this.cart = []
       this.card = null
    }
-   buy() {
+   buy(cost) {
       // To be further developed.
+      if(cost > this.money){ console.log("Insufficient funds, cart total is more than your current balance.")}
+      else{
+         this.money -= cost
+      }
    }
    logout() {
       this.logged_in = false
       console.log(`User ${this.username} logged out due to inactivity.`)
    }
+
 }
  
 let users = JSON.parse(localStorage.getItem("users")) || []
@@ -41,7 +46,9 @@ function login(email, password) {
  
    // Sample usage
 signup("user5@example.com", "user5", "password5", 500)
-var currentUser = login("user5@example.com", "password5")
-console.log(currentUser)
-setTimeout(() => currentUser.logout(), 360000)
+var newUser = login("user5@example.com", "password5")
+// console.log(currentUser)
+// setTimeout(() => newUser.logout(), 360000)
+
+export {newUser}
 
