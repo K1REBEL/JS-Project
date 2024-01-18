@@ -9,15 +9,19 @@
     <title>HOME</title>
 </head>
 <body>
-
+     
+  
     <header>
           <a href="#" class="logo">
             <img src="./imgs/logo.jpeg" alt="LOGO">
           </a>
+          <div class="nav-toggle">
+            <i class="fas fa-bars"></i>
+          </div>
           <ul class="navigation">
             <li><a href="#">Home</a></li>
-            <li><a href="#">Products</a></li>
-            <li><a href="#">Contact Us</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#contact">Contact Us</a></li>
             <li><a href="#">About Us</a></li>
             <li><a href="login.html">Login</a></li>
             <li><a href="signup.html">Signup</a></li>
@@ -25,6 +29,7 @@
               <i class="fas fa-shopping-cart"></i>
             </a></li>
         </ul>
+      </div>
       </header>
 
       <section class="banner" id="banner">
@@ -34,7 +39,7 @@
         </div>
       </section>
 
-      <section>     
+      <section class="products" id="products">     
     <div class="container mt-5">
       <div class="row">
        <div class="col-md-4">
@@ -42,17 +47,15 @@
          <img src="./imgs/ray-bin.jpg" class="card-img-top">
           <div class="card-body">
            <h5 class="card-title"> EGP 2,999</h5>
-            <p class="card-text"><span class="data">Ray-Ban</span></p>
+            <p class="card-title"><span class="data">Ray-Ban</span></p>
             <p class="card-text"><span class="data">Sunglasses</span></p>
             <p class="card-text"><span class="data">Description</span> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            <button class="btn btn-success add-to-cart">Add to Cart</button>
             <button class="btn btn-success show-details">Details</button>
+            <button class="btn btn-success add-to-cart">Add to Cart</button>
           </div>
          </div>
         </div>
       </div>
-     </div>
-
       </div>
   </div>
 
@@ -73,6 +76,34 @@
 </div>
       </section>
 
+      <section class="contact" id="contact">
+      <div class="title">
+        <h2 class="title-text"><span class="styl">C</span>ontact Us</h2>
+        <p class="styl">We are here to help you send your query or any issue you're facing</p>
+      </div>
+      <div class="contact-container">
+      <div class="contact-map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3413.013466187168!2d29.903514275380694!3d31.19263997436572!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14f5c394ebd03ec1%3A0x16cbff5d844ff34b!2sInformation%20Technology%20Institute!5e0!3m2!1sen!2seg!4v1705592715776!5m2!1sen!2seg" 
+        width="100%" height="auto" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <div class="contact-form">
+        <h3 class="styl">Send Message</h3>
+        <div class="input-box">
+          <input type="text" placeholder="Name">
+        </div>
+        <div class="input-box">
+          <input type="text" placeholder="Email">
+        </div>
+        <div class="input-box">
+          <textarea type="text" placeholder="Enter your message"></textarea>
+        </div>
+        <div class="input-box">
+          <input type="submit" value="send message">
+        </div>
+      </div>
+    </div>
+   </section>
+
       <footer class="bg-dark text-white pt-5 pb-2">
         <div class="container text-center text-md-left">
           <div class="row text-center text-md-left">
@@ -82,17 +113,18 @@
             </div>
       
             <div class="col-md-4 mb-3 text-center">
-              <h5 class="text-uppercase mb-3 font-weight-bold text-success">Products</h5>
-              <p><a href="#" class=" footer-col display-block text-decoration-none margin-bottom-2xs text-white">Sunglasses</a></p>
-              <p><a href="#" class=" footer-col display-block text-decoration-none margin-bottom-2xs text-white">Trousers</a></p>
-              <p><a href="#" class=" footer-col display-block text-decoration-none margin-bottom-2xs text-white">Necklace</a></p>
+              <h5 class="text-uppercase mb-3 font-weight-bold text-success">Quick inks</h5>
+              <p><a href="home" class=" footer-col display-block text-decoration-none margin-bottom-2xs text-white">Home</a></p>
+              <p><a href="contact" class=" footer-col display-block text-decoration-none margin-bottom-2xs text-white">About us</a></p>
+              <p><a href="#" class=" footer-col display-block text-decoration-none margin-bottom-2xs text-white">Contact Us</a></p>
+              <p><a href="cart.html" class=" footer-col display-block text-decoration-none margin-bottom-2xs text-white">Cart</a></p>
             </div>
       
             <div class="col-md-4 mb-3 text-md-right linkedin-icons">
               <h5 class="text-uppercase mb-3 font-weight-bold text-success">Contact</h5>  
               <p><a href="https://www.linkedin.com/in/kareem-ibraheem" target="_blank" class="text-white"><i class="fab fa-linkedin linkedin-icons" style="padding-left: 20px;"></i> Kareem Ibrahim</a></p>
               <p><a href="https://www.linkedin.com/in/youssefbadr1" target="_blank" class="text-white"><i class="fab fa-linkedin"></i> Youssef Badr</a></p>
-              <p><a href="https://www.linkedin.com/in/menna-ashraf-041376240" target="_blank" class="text-white"><i class="fab fa-linkedin"></i> Menna Shraf</a></p>
+              <p><a href="https://www.linkedin.com/in/menna-ashraf-041376240" target="_blank" class="text-white"><i class="fab fa-linkedin"></i> Menna AShraf</a></p>
               <p><a href="https://eg.linkedin.com/in/gamal-sobhy-510693217?trk=people-guest_people_search-card" target="_blank" class="text-white" style="transition: color 0.3s ease;"><i class="fab fa-linkedin"></i> Gamal Sabry</a></p>
             </div>
           </div>
