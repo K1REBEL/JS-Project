@@ -76,7 +76,7 @@ async function updateCart() {
       console.error("Error updating cart:", error);
    }
 }
-
+''
 updateCart();
 
 export {currentUser};
