@@ -21,9 +21,9 @@ var Usr1 = fetchUser(Usr)
 var cart = Usr1.cart;
 
 
-window.onload = function(cart) {
+window.onload = function() {
    // var cart = [];
-   console.log(cart);
+   console.log( "from cart" ,cart);
    var cartItemsElement = document.querySelector(".product");
    // var totalCostElement = document.getElementById('total-cost');
    console.log(cartItemsElement);
@@ -89,11 +89,10 @@ window.onload = function(cart) {
 //  })
 //  });
 
-// async function updateCart() {
+// function updateCart() {
 //   try {
-   
-//    //   var cart3 = await addToCart(1, cart1);
-//      console.log("Current User Cart: ", cart1);
+//      var cart3 =  addToCart(1, cart);
+//      console.log("Current User Cart: ", cart3);
 //   } catch (error) {
 //      console.error("Error updating cart:", error);
 //   }
