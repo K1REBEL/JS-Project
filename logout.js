@@ -23,3 +23,29 @@ var logoutBtn = document.getElementById('LogOut')
 logoutBtn.addEventListener('click', logoutBTN)
 
 setTimeout(() => logout(newUser), 300000)
+
+
+
+
+// var loggingoutTimer;
+
+// function logoutTimer() {
+//   loggingoutTimer = setTimeout(logout, 3600000); 
+// }
+
+function resetLogoutTimer() {
+  clearTimeout(logout);
+  logout(newUser);
+}
+
+// function logout() {
+//   alert("You are Logged Out Please login again");
+//   window.location.href = "login.html"
+
+// }
+
+logout(newUser);
+
+document.addEventListener("mousemove", resetLogoutTimer);
+document.addEventListener("keypress", resetLogoutTimer);
+
