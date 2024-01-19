@@ -1,11 +1,15 @@
+import {newUser} from "./LoginSignup.js"
+// console.log(newUser);
+
+
 document.addEventListener("DOMContentLoaded",function(){
-  let products = document.querySelector(".product");
+  let products = document.querySelector(".products");
   var json;
   fetch('https://dummyjson.com/products')
   .then(res=>res.json())
   .then(fetchedJson=> {
     json = fetchedJson;
-    console.log(json.products);
+   //  console.log(json.products);
     json.products.forEach(data => {
     products.innerHTML += `
                 <div class="product filter-item all mobiles">
@@ -26,41 +30,51 @@ document.addEventListener("DOMContentLoaded",function(){
 })
 });
 
+let users = JSON.parse(localStorage.getItem("users")) || []
 
-
-function addToCart(id) {
-  var cart = [];
-  fetch('https://dummyjson.com/products/' + id)
-    .then(res => res.json())
-    .then(product => {
-      var item = cart.find(p => p.id === product.id);
-      if (item) {
-        item.quantity++;
-      } else {
-        cart.push({ id: product.id, name: product.title, price: product.price, quantity: 1 });
+function fetchUser(user){
+   for (let i = 0; i < users.length; i++) {
+      if (user.username == users[i].username && users[i].logged_in == true){
+         // console.log("I'm here");
+         // console.log(users[i]);
+         return users[i]
       }
-      console.log(cart);
-      // updateCartUI(cart);
-      return cart;
-    });
+   }
+   console.log("not found");
 }
-var as = addToCart(1);
-document.addEventListener("DOMContentLoaded",function(as){
-  console.log(as);
-  var cartItemsElement = document.getElementById("cart-items");
-  // var totalCostElement = document.getElementById('total-cost');
-  console.log(cartItemsElement);
-  cartItemsElement.innerHTML += '';
-  
 
-  as.forEach(itemm => {
-      var cartItem = document.createElement('li');
-      cartItem.textContent = `${itemm.name} - Quantity: ${itemm.quantity} - $${(itemm.price * itemm.quantity).toFixed(2)}`;
-      cartItemsElement.appendChild(cartItem);
-  });
+var Usr = fetchUser(newUser)
 
-  // var totalCost = cart.reduce((total, itemm) => total + itemm.price * itemm.quantity, 0);
-  // totalCostElement.textContent = totalCost.toFixed(2);
+function addToCart(id, Usr) {
+   var cart = Usr.cart;
+   fetch('https://dummyjson.com/products/' + id)
+     .then(res => res.json())
+     .then(product => {
+       var item = cart.find(p => p.id === product.id);
+       if (item) {
+         item.quantity++;
+       } else {
+         cart.push({ id: product.id, name: product.title, price: product.price, quantity: 1 });
+       }
+       Usr.cart = cart
+       for (let i = 0; i < users.length; i++) {
+         if (Usr.username == users[i].username && users[i].logged_in == true){
+            // console.log("I'm here");
+            users[i] = Usr
+            // console.log(users[i]);
+            localStorage.setItem("users", JSON.stringify(users))
+            break
+         }
+      }
+      //  console.log(cart);
+       return Usr;
+     });
+ }
 
-})
-// function updateCartUI(cart)
+ var as = addToCart(1, Usr);
+
+// console.log(Usr);
+
+export {Usr}
+
+
