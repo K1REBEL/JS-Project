@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">   
+    <link rel="stylesheet" href="styles.css">
+    <title>HOME</title>
+</head>
+<body>
+     
+  
+    <header>
+          <a href="#" class="logo">
+            <img src="./imgs/logo.jpeg" alt="LOGO">
+          </a>
+          <div class="nav-toggle">
+            <i class="fas fa-bars"></i>
+          </div>
+          <ul class="navigation">
+            <li><a href="#">Home</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="signup.html">Signup</a></li>
+            <li><a href="cart.html" class="nav-cart">
+            <i class="fas fa-shopping-cart"></i>
+            <div class="total-quatity"></div>
+            </a></li>
+        </ul>
+      </div>
+      </header>
+
+      <section class="banner" id="banner">
+        <div class="content">
+            <h3>Discover the perfect blend of style and elegance with</h3>
+            <h5> where fashion meets individuality, and every accessory tells a unique story</h5>
+        </div>
+      </section>
+
+      <section class="products" id="products">     
+        <div class="container mt-5">
+            <div class="row">
+                <!-- Product 1 -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="./imgs/ray-bin.jpg" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title"> EGP 2,999</h5>
+                            <p class="card-title"><span class="data">Ray-Ban</span></p>
+                            <p class="card-text"><span class="data">Sunglasses</span></p>
+                            <p class="card-text"><span class="data">Description</span> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            <button class="btn btn-success show-details">Details</button>
+                            <button class="btn btn-success add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- product 2 -->
+                <div class="col-md-4">
+                  <div class="card">
+                      <img src="./imgs/7004455313_1.jpg" class="card-img-top">
+                      <div class="card-body">
+                          <h5 class="card-title"> EGP 2,999</h5>
+                          <p class="product-brand"><span class="data">Another Brand</span></p>
+                          <p class="card-text"><span class="data">Sunglasses</span></p>
+                          <p class="card-text"><span class="data">Description</span> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                          <button class="btn btn-success show-details">Details</button>
+                          <button class="btn btn-success add-to-cart">Add to Cart</button>
+                      </div>
+                  </div>
+              </div>
+
+          </div>
+          </div>
+      </div>
+
+  <div class="modal fade" id="detailsModal" tabindex="-1" role="dialog" aria-labelledby="detailsModalLabel" aria-hidden="true">
+   <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+     <div class="modal-header">
+        <h5 class="modal-title" id="detailsModalLabel">Product Details</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+     <div class="modal-body">
+    <div class="product-details-content"></div>
+   </div>
+  </div>
+ </div>
+</div>
+      </section>
+
+      <section class="contact" id="contact">
+      <div class="title">
+        <h2 class="title-text"><span class="styl">C</span>ontact Us</h2>
+        <p class="styl">We are here to help you send your query or any issue you're facing</p>
+      </div>
+      <div class="contact-container">
+      <div class="contact-map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3413.013466187168!2d29.903514275380694!3d31.19263997436572!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14f5c394ebd03ec1%3A0x16cbff5d844ff34b!2sInformation%20Technology%20Institute!5e0!3m2!1sen!2seg!4v1705592715776!5m2!1sen!2seg" 
+        width="100%" height="auto" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <div class="contact-form">
+        <h3 class="styl">Send Message</h3>
+        <div class="input-box">
+          <input type="text" placeholder="Name">
+        </div>
+        <div class="input-box">
+          <input type="text" placeholder="Email">
+        </div>
+        <div class="input-box">
+          <textarea type="text" placeholder="Enter your message"></textarea>
+        </div>
+        <div class="input-box">
+          <input type="submit" value="send message">
+        </div>
+      </div>
+    </div>
+   </section>
+
+      <footer class="bg-dark text-white pt-5 pb-2">
+        <div class="container text-center text-md-left">
+          <div class="row text-center text-md-left">
+            <div class="col-md-4 mb-3">
+              <h5 class="text-uppercase mb-4 font-weight-bold text-success">Disclaimer</h5>
+              <p>This website is proudly developed for and by ITI. The products, services, and any related information presented on this platform are intended for demonstration and educational purposes.</p>
+            </div>
+      
+            <div class="col-md-4 mb-3 text-center">
+              <h5 class="text-uppercase mb-3 font-weight-bold text-success">Quick inks</h5>
+              <p><a href="home" class=" footer-col display-block text-decoration-none margin-bottom-2xs text-white">Home</a></p>
+              <p><a href="contact" class=" footer-col display-block text-decoration-none margin-bottom-2xs text-white">About us</a></p>
+              <p><a href="#" class=" footer-col display-block text-decoration-none margin-bottom-2xs text-white">Contact Us</a></p>
+              <p><a href="cart.html" class=" footer-col display-block text-decoration-none margin-bottom-2xs text-white">Cart</a></p>
+            </div>
+      
+            <div class="col-md-4 mb-3 text-md-right linkedin-icons">
+              <h5 class="text-uppercase mb-3 font-weight-bold text-success">Contact</h5>  
+              <p><a href="https://www.linkedin.com/in/kareem-ibraheem" target="_blank" class="text-white"><i class="fab fa-linkedin linkedin-icons" style="padding-left: 20px;"></i> Kareem Ibrahim</a></p>
+              <p><a href="https://www.linkedin.com/in/youssefbadr1" target="_blank" class="text-white"><i class="fab fa-linkedin"></i> Youssef Badr</a></p>
+              <p><a href="https://www.linkedin.com/in/menna-ashraf-041376240" target="_blank" class="text-white"><i class="fab fa-linkedin"></i> Menna AShraf</a></p>
+              <p><a href="https://eg.linkedin.com/in/gamal-sobhy-510693217?trk=people-guest_people_search-card" target="_blank" class="text-white" style="transition: color 0.3s ease;"><i class="fab fa-linkedin"></i> Gamal Sabry</a></p>
+            </div>
+          </div>
+      
+          <div class="row mt-2">
+            <div class="col-md-12 text-center">
+              <p class="mb-0" style="font-size: 12px;">Copyright @2024 All rights reserved by <span style="color: rgb(129, 45, 45);"><a href="https://iti.gov.eg/iti/home" class="text-white" style="transition: color 0.3s ease;">ITI</a></span></p>
+            </div>
+          </div>
+        </div>
+      </footer> 
+       
+
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+      <script src="script.js"></script>
+</body>
+</html>
