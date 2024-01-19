@@ -3,7 +3,7 @@ import {newUser} from "./LoginSignup.js"
 
 
 document.addEventListener("DOMContentLoaded",function(){
-  let products = document.querySelector(".product");
+  let products = document.querySelector(".products");
   var json;
   fetch('https://dummyjson.com/products')
   .then(res=>res.json())

@@ -1,4 +1,4 @@
-// import {Usr} from "./fetchApi.js"
+
 import {Usr} from "./fetchApi.js"
 
 console.log(Usr);
@@ -19,10 +19,9 @@ function fetchUser(user){
 var Usr1 = fetchUser(Usr)
 
 var cart = Usr1.cart;
-
+var cart_total = 0;
 
 window.onload = function() {
-   // var cart = [];
    console.log( "from cart" ,cart);
    var cartItemsElement = document.querySelector(".product");
    // var totalCostElement = document.getElementById('total-cost');
@@ -30,7 +29,8 @@ window.onload = function() {
    cartItemsElement.innerHTML = '';
    
    for(let i=0; i<cart.length; i++){
-      console.log("hi");
+      cart_total += cart[i].price * cart[i].quantity
+      console.log("hi", cart_total);
       var cartItem = document.createElement('li');
       cartItem.textContent = `${cart[i].name} - Quantity: ${cart[i].quantity} - $${(cart[i].price * cart[i].quantity).toFixed(2)}`;
       cartItemsElement.appendChild(cartItem);
@@ -38,6 +38,27 @@ window.onload = function() {
    }
 }
 
+var checkoutBtn = document.getElementById('Checkout');
+// console.log(checkoutBtn);
+checkoutBtn.addEventListener('click', checkOut);
+
+function checkOut() {
+   console.log("I'm a button")
+   //   cart_total = 20
+   console.log("Cart Total:", cart_total);
+   if(cart_total > Usr1.money){ console.log("Insufficient funds, cart total is more than your current balance.") }
+   else{
+      Usr1.money -= cart_total
+      Usr1.cart = []
+      // console.log(Usr1);
+      for (let i = 0; i < users.length; i++) {
+         if (Usr1.username == users[i].username && users[i].logged_in == true){
+            users[i] = Usr1
+            localStorage.setItem("users", JSON.stringify(users))
+         }
+      }
+   }
+}
 
 // document.addEventListener("DOMContentLoaded",function(cart){
 //    console.log(cart);
