@@ -78,15 +78,3 @@ function addToCart(id, Usr) {
 export {Usr}
 
 
-// var cart1 = currentUser.cart;
-
-// async function updateCart() {
-//   try {
-//      var cart3 = await addToCart(1, cart1);
-//      console.log("cart3: ", cart3);
-//   } catch (error) {
-//      console.error("Error updating cart:", error);
-//   }
-// }
-
-// updateCart();

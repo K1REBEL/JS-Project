@@ -41,14 +41,13 @@ function login(email, password) {
       }
    }
    console.log("Invalid email or password.")
-   return null;
+   return null
 }
  
    // Sample usage
-signup("user5@example.com", "user5", "password5", 500)
-var newUser = login("user5@example.com", "password5")
-// console.log(currentUser)
-// setTimeout(() => newUser.logout(), 360000)
+signup("user6@example.com", "user6", "pass", 1000000)
+var newUser = login("user6@example.com", "pass")
+console.log(newUser)
 
 export {newUser}
 
