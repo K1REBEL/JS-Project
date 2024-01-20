@@ -1,12 +1,12 @@
 function fetchData() {
   return fetch("https://dummyjson.com/products")
     .then((response) => response.json())
-    .then((data) => data.products);
+    .then((data) => data.products)
 }
 
 function showProducts(products) {
-  const productsContainer = document.querySelector(".row");
-  productsContainer.innerHTML = "";
+  const productsContainer = document.querySelector(".row")
+  productsContainer.innerHTML = ""
 
   products.forEach((product) => {
     productsContainer.innerHTML += `<div class="col-md-4">
@@ -21,41 +21,41 @@ function showProducts(products) {
                           <button class="btn btn-success" onclick="addToCart(${product.id})">Add to Cart</button>
                       </div>
                   </div>
-              </div>`;
-    $(" .card-text").not(":eq(i)").hide();
+              </div>`
+    $(" .card-text").not(":eq(i)").hide()
     $(".show-details").click(function () {
       var details = $(this)
         .parent()
         .parent()
         .find(" .card-text")
-        .not(":eq(i)");
-      details.toggle();
+        .not(":eq(i)")
+      details.toggle()
       if ($(this).text() == "Details") {
-        $(this).text("Hide");
+        $(this).text("Hide")
       } else {
-        $(this).text("Details");
+        $(this).text("Details")
       }
-    });
-  });
+    })
+  })
 }
 
 function populateCategories(products) {
   const categories = [
     "all",
     ...new Set(products.map((product) => product.category)),
-  ];
-  const categoryFilter = document.getElementById("categoryFilter");
+  ]
+  const categoryFilter = document.getElementById("categoryFilter")
 
   categories.forEach((category) => {
-    const option = document.createElement("option");
-    option.value = category;
-    option.text = category.charAt(0).toUpperCase() + category.slice(1);
-    categoryFilter.appendChild(option);
-  });
+    const option = document.createElement("option")
+    option.value = category
+    option.text = category.charAt(0).toUpperCase() + category.slice(1)
+    categoryFilter.appendChild(option)
+  })
 }
 
 function filterProducts() {
-  const selectedCategory = document.getElementById("categoryFilter").value;
+  const selectedCategory = document.getElementById("categoryFilter").value
 
   fetchData().then((products) => {
     if (selectedCategory !== "all") {
@@ -63,16 +63,16 @@ function filterProducts() {
         (product) => product.category === selectedCategory
       );
     }
-    showProducts(products);
+    showProducts(products)
   });
 }
 
 fetchData()
   .then((products) => {
-    populateCategories(products);
-    showProducts(products);
+    populateCategories(products)
+    showProducts(products)
   })
-  .catch((error) => console.error("Error fetching data:", error));
+  .catch((error) => console.error("Error fetching data:", error))
 
 let users = JSON.parse(localStorage.getItem("users")) || []
 let currentUser = JSON.parse(localStorage.getItem("Current User"))
@@ -81,12 +81,11 @@ console.log(currentUser)
 function fetchUser(user) {
   for (let i = 0; i < users.length; i++) {
     if (user.username == users[i].username && users[i].logged_in == true) {
-      // console.log("I'm here");
-      // console.log(users[i]);
-      return users[i];
+      // console.log(users[i])
+      return users[i]
     }
   }
-  console.log("not found");
+  console.log("not found")
 }
 
 function addToCart(id) {

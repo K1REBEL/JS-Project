@@ -7,7 +7,6 @@ class User {
       this.money = money
       this.logged_in = false
       this.cart = []
-      this.card = null
    }
    buy(cost) {
       if(cost > this.money){ console.log("Insufficient funds, cart total is more than your current balance.")}
