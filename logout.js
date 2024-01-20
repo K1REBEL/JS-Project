@@ -14,9 +14,9 @@ function logout(user) {
            break
          }
        }
-      console.log(`User ${user.username} logged out due to inactivity.`)
+      alert(`User ${user.username} logged out due to inactivity.`)
    }
-   else{ console.log("User is already logged out") }
+   else{ alert("User is already logged out") }
 }
 
 setTimeout(() => logout(currentUser), 300000)

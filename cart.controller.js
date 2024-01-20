@@ -75,8 +75,8 @@ checkoutBtn.addEventListener("click", checkOut)
 function checkOut() {
 //   console.log("I'm a button")
 //   console.log("Cart Total:", cart_total)
-  if (cart_total > currentUser.money) { console.log("Insufficient funds, cart total is more than your current balance.") } 
-  else if (cart_total == 0) { console.log("Your cart is empty, go shopping!") } 
+  if (cart_total > currentUser.money) { alert("Insufficient funds, cart total is more than your current balance.") } 
+  else if (cart_total == 0) { alert("Your cart is empty, go shopping!") } 
   else {
     currentUser.money -= cart_total
     currentUser.cart = []
