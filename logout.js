@@ -1,4 +1,4 @@
-import {newUser} from "./LoginSignup.js"
+import {newUser} from "./user.js"
 // console.log(newUser)
 
 function logout(user) {
