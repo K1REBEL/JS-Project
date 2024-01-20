@@ -1,0 +1,274 @@
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 10px;
+    z-index: 10000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.5s;
+    background-color: rgba(51, 51, 51, 0.7);
+}
+
+header.down {
+  background: #fff;
+  padding: 2px 2px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+}
+
+.logo img {
+    width: 40px; 
+    height: auto; 
+}
+
+header .navigation,
+.nav-cart {
+    position: relative;
+    display: flex;
+    align-items: center; 
+}
+
+header .nav-cart {
+    margin-left: auto; 
+}
+
+header .navigation {
+    margin-left: 10px; 
+}
+
+header .navigation li {
+    list-style: none;
+    margin-left: 30px;
+    margin-right: 10px; 
+    margin-top: 10px;
+}
+
+header .navigation li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 300;
+}
+
+header .navigation li a:hover {
+  color: rgb(25, 73, 25);
+}
+
+header.down .navigation li a {
+  color: #111;
+}
+
+header.down .navigation li a:hover {
+  color: rgb(25, 73, 25);
+  text-shadow: rgb(41, 94, 41);
+  text-decoration:overline;
+}
+
+section {
+  padding: 100px;
+}
+
+.row {
+  position: relative;
+  width: 100%;
+  display: fixed;
+}
+
+
+header .nav-toggle {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  header .navigation {
+    display: none; 
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 0; 
+    width: 100%;
+    background-color: rgba(51, 51, 51, 0.7);
+  }
+
+  header .navigation.show {
+    display: flex; 
+  }
+
+  header .navigation li {
+    margin: 10px 0;
+  }
+
+  header .nav-toggle {
+    display: block;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+
+  header.down .nav-toggle,
+  header.down .navigation {
+    background-color: #fff;
+    color: #111;
+  }
+}
+
+.title {
+    text-align: center;
+  }
+  
+  .title-text
+  .title-text h2 {
+    display: inline-block;
+    position: relative;
+    font-size: 2em;
+    font-weight: 700;
+    color: #fff;
+  }
+  
+  .styl {
+    color: #754fa8;
+  }
+
+
+
+
+
+
+
+
+
+.container {
+    max-width: 960px;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.cart-item img {
+    max-width: 100px;
+    margin-right: 10px;
+    border-radius: 4px;
+}
+
+.item-details {
+    flex-grow: 1;
+}
+
+.quantity-box {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.quantity-controls {
+    border: 1px solid white;
+    box-shadow: #333;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    margin-right: 10px;
+}
+
+.quantity-box button {
+    border: none;
+    background-color: #28a745;
+    color: #fff;
+    cursor: pointer;
+    padding: 5px 10px;
+    transition: background-color 0.3s;
+}
+
+
+
+.quantity-box span {
+    padding: 5px 10px;
+    color: #28a745;
+    font-weight: bold;
+}
+
+.btn-remove {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 430px;
+}
+
+.btn-remove:hover {
+    background-color: #c82333;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px; 
+    margin: 0 auto; 
+}
+
+.btn-checkout {
+    margin-top: 20px;
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    cursor: pointer;
+    background-color: #28a745; 
+    color: #fff;
+    border: none;
+    padding: 8px;
+    border-radius: 4px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #333;
+    text-decoration: none;
+}
+
+/* foter style */
+
+footer {
+    background-color: #f8f9fa;
+    padding: 20px 0;
+    text-align: center;
+    border-top: 2px solid #dee2e6;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  
+  .disclaimer {
+    text-align: left;
+    margin-bottom: 10px;
+    color: #495057;
+  }
+  
+  .linkedin-icons a {
+    color: #495057;
+    text-decoration: none;
+    margin-right: 20px;
+    transition: color 0.3s ease;
+  }
+  
+  .linkedin-icons:hover {
+    color: green;
+  }
