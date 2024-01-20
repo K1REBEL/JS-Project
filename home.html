@@ -166,8 +166,9 @@
       <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-      <script src="script.js"></script>
       <script type="module" src="fetchApi.js"></script>
+      <script type="module" src="script.js"></script>
+
 
       <script>
 
@@ -189,12 +190,31 @@
                             <h5 class="card-title"> ${product.price}</h5>
                             <p class="card-title"><span class="data">${product.title}</span></p>
                             <p class="card-text"><span class="data">${product.category}</span></p>
-                            <p class="card-text"><span class="data">${product.description}</span> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            <p class="card-text"><span class="data">Description</span>${product.description}</p>
                             <button class="btn btn-success show-details">Details</button>
                             <button class="btn btn-success add-to-cart">Add to Cart</button>
                         </div>
                     </div>
                 </div>`;
+                $(".add-to-cart").click(function () 
+  {
+      var name = $(this).parent().find(".card-title").text()
+      var price = $(this).parent().find(".card-text").eq(1).text()
+      alert("You have added " + name + " for " + price + " to your cart.")
+  })
+$(".card-title, .card-text").not(":eq(1)").hide();
+$(".show-details").click(function () 
+  {
+      var details = $(this).parent().parent().find(".card-title, .card-text").not(":eq(1)")
+      details.toggle()
+      if ($(this).text() == "Details") 
+      {
+          $(this).text("Hide")
+      } else 
+      {
+          $(this).text("Details")
+      }
+  })
       });
     }
 
