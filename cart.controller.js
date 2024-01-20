@@ -22,7 +22,7 @@ var cart = Usr1.cart;
 var cart_total = 0;
 
 window.onload = function() {
-   console.log( "from cart" ,cart);
+   // console.log( "from cart" ,cart);
    var cartItemsElement = document.querySelector(".product");
    // var totalCostElement = document.getElementById('total-cost');
    console.log(cartItemsElement);
