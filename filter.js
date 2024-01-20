@@ -9,7 +9,7 @@ function showProducts(products) {
   productsContainer.innerHTML = "";
 
   products.forEach((product) => {
-    productsContainer.innerHTML += `<div class="col-md-4">
+    productsContainer.innerHTML += `<div class="col-md-4 product-wrapper">
                         <div class="card">
                       <img src="${product.thumbnail}" class="card-img-top">
                       <div class="card-body">
@@ -17,8 +17,8 @@ function showProducts(products) {
                           <p class="product-brand"><span class="data">${product.title}</span></p>
                           <p class="card-text"><span class="data">${product.category}</span></p>
                           <p class="card-text"><span class="data">Description </span>${product.description}</p>
-                          <button class="btn btn-success show-details">Details</button>
-                          <button class="btn btn-success" onclick="addToCart(${product.id})">Add to Cart</button>
+                          <button class="btn btn-success btn-det show-details">Details</button>
+                          <button class="btn btn-success btn-det" onclick="addToCart(${product.id})">Add to Cart</button>
                       </div>
                   </div>
               </div>`;
