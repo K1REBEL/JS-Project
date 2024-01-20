@@ -45,9 +45,13 @@ function login(email, password) {
 }
  
    // Sample usage
-signup("user6@example.com", "user6", "pass", 1000000)
-var newUser = login("user6@example.com", "pass")
-console.log(newUser)
+// signup("user6@example.com", "user6", "pass", 1000000)
+// var newUser = login("user6@example.com", "pass")
+// console.log(newUser)
 
-export {newUser}
+
+
+
+
+// export {newUser}
 
