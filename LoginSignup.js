@@ -45,9 +45,19 @@ function login(email, password) {
 }
  
    // Sample usage
-signup("user6@example.com", "user6", "pass", 1000000)
-var newUser = login("user6@example.com", "pass")
-console.log(newUser)
+// signup("user6@example.com", "user6", "pass", 1000000)
+// var newUser = login("user6@example.com", "pass")
+// console.log(newUser)
 
-export {newUser}
 
+   let name,email,password,userBalance ;
+   name = document.getElementById("inputUsername").value;
+   email = document.getElementById("inputEmailSignup").value;
+   password = document.getElementById("inputPasswordSignup").value;
+   userBalance = document.getElementById("balance").value;
+
+   var submitBtn = document.querySelectorAll('.btn-signup');
+   console.log(submitBtn)
+
+// export {newUser}
+submitBtn.addEventListener("click", function(){})
