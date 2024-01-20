@@ -197,11 +197,36 @@ header .nav-toggle {
     padding: 5px 10px;
     border-radius: 4px;
     cursor: pointer;
-    align-items: flex-end;
+    margin-left: 430px;
 }
 
 .btn-remove:hover {
     background-color: #c82333;
+}
+
+.cart-item {
+  flex-direction: column; 
+}
+
+.item-details {
+  width: 100%; 
+}
+
+
+@media screen and (min-width: 768px) {
+  .cart-item {
+      flex-direction: row; 
+      justify-content: space-between; 
+  }
+
+  .item-details {
+      width: auto;
+  }
+
+  .btn-remove {
+      margin-left: 430px; 
+      margin-top: 0; 
+  }
 }
 
 .modal-content {
