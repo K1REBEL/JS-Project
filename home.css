@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
 
 body {
+  font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -52,8 +54,9 @@ box-shadow: 0 5px 20px rgba(0,0,0,0.5);
 }
 
 .logo img {
-  width: 40px; 
-  height: auto; 
+  width: 70px; 
+  height: auto;
+  margin-left: 10px;
 }
 
 header .navigation,
@@ -180,9 +183,41 @@ margin: 0;
 
 /* Products style */
 
+#filters {
+  margin-top: 30px;
+  text-align: center; 
+}
+
+label {
+  display: inline-block;
+  font-weight: 400;
+  font-size: 18px;
+  color: #000;
+  margin-bottom: 5px;
+  font-style: italic;
+}
+
+#categoryFilter {
+  padding: 8px;
+  border: 2px solid #287640;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: #fff;
+  color: #000;
+  font-size: 14px;
+  transition: border-color 0.3s, color 0.3s, background-color 0.3s;
+}
+
+#categoryFilter:hover {
+  border-color: #2d7242;
+  color: #000;
+  background-color: #ecf0f1;
+}
+
 .card {
-margin-bottom: 20px;
-height: 100%;
+  margin-bottom: 20px;
+  height: 100%;
+  padding-top: 20px;
 }
 
 .card-img-top {
