@@ -26,17 +26,17 @@ document.addEventListener("DOMContentLoaded",function(){
 
 $(".card-title, .card-text").not(":eq(1)").hide();
 $(".show-details").click(function () 
-  {
-      var details = $(this).parent().parent().find(".card-title, .card-text").not(":eq(1)")
-      details.toggle()
-      if ($(this).text() == "Details") 
-      {
-          $(this).text("Hide")
-      } else 
-      {
-          $(this).text("Details")
-      }
-  })
+{
+    var details = $(this).parent().parent().find(".card-title, .card-text").not(":eq(1)")
+    details.toggle()
+    if ($(this).text() == "Details") 
+    {
+        $(this).text("Hide")
+    } else 
+    {
+        $(this).text("Details")
+    }
+})
   })
 })
 });
