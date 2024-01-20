@@ -104,6 +104,7 @@ function addToCart(id) {
           name: product.title,
           price: product.price,
           quantity: 1,
+          image:product.thumbnail
         })
       }
 
