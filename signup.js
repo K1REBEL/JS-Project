@@ -1,3 +1,13 @@
+import { User } from "./user.js"
+
+let users = JSON.parse(localStorage.getItem("users")) || []
+ 
+function signup(email, username, password, money) {
+   const newUser = new User(email, username, password, money)
+   users.push(newUser)
+   localStorage.setItem("users", JSON.stringify(users))
+}
+
 var signupBtn = document.getElementById('submit_button')
 // console.log(signupBtn);
 

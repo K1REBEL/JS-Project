@@ -1,5 +1,5 @@
-import {newUser} from "./LoginSignup.js"
-// console.log(newUser);
+import { newUser } from "./login.js"
+console.log(newUser);
 
 
 document.addEventListener("DOMContentLoaded",function(){
