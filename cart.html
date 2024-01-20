@@ -36,7 +36,7 @@
         <h2 class="title-text"><span class="styl">S</span>opping Cart</h2>
         <div class="row">
             <div class="col-md-8">
-                <div class="cart-item">
+                <!-- <div class="cart-item">
                     <img src="./imgs/ray-bin.jpg">
                     <div class="item-details">
                         <h4>Product 1</h4>
@@ -50,12 +50,12 @@
                         </div>
                         <button class="btn btn-sm btn-remove" aria-label="Remove"><i class="fas fa-trash"></i></button>
                     </div>
-                </div>
+                </div> -->
             </div>
             <div class="col-md-4">
                 <div class="cart-summary">
                     <h4>Cart Summary</h4>
-                    <p>Total: <span id="total">EGP 150.00</span></p>
+                    <p>Total: <span id="total"></span></p>
                     <a class="btn btn-success btn-checkout" href="#checkoutModal">Checkout</a>
                 </div>
             </div>
@@ -66,11 +66,11 @@
     <div id="checkoutModal" class="modal">
       <div class="modal-content" style="margin-top: 150px;">
         <span class="close">&times;</span>
-        <h2 class="title-text"><span class="styl">C</span>eckout</h2>
+        <h2 class="title-text"><span class="styl">C</span>heckout</h2>
           <form>
               <div class="form-group">
                   <label for="creditCard">Credit Card Number</label>
-                  <input type="text" class="form-control" id="creditCard" placeholder="Enter credit card number" pattern="[0-9]+" title="Please enter only numbers" required>
+                  <input type="text" class="form-control" id="creditCard" placeholder="Enter credit card number" pattern="[0-9]" title="Please enter only numbers" required>
               </div>
               <div class="form-row">
                   <div class="form-group col-md-6">
@@ -90,7 +90,7 @@
                   <label for="address">Address</label>
                   <textarea class="form-control" id="address" rows="3" placeholder="Enter your address" required></textarea>
               </div>
-              <button type="submit" class="btn btn-success">Place Order</button>
+              <button type="submit" class="btn btn-success" id="place-order">Place Order</button>
           </form>
       </div>
   </div>
