@@ -1,50 +1,42 @@
-import {newUser} from "./user.js"
-// console.log(newUser)
+
+let users = JSON.parse(localStorage.getItem("users")) || []
+let currentUser = JSON.parse(localStorage.getItem("Current User"))
+console.log(currentUser)
 
 function logout(user) {
    if(user.logged_in){
       user.logged_in = false
+      for (let i = 0; i < users.length; i++) {
+         if (user.username == users[i].username && users[i].logged_in == true) {
+           users[i] = user
+           localStorage.setItem("users", JSON.stringify(users))
+           localStorage.setItem("Current User", JSON.stringify(user))
+           break
+         }
+       }
       console.log(`User ${user.username} logged out due to inactivity.`)
    }
    else{ console.log("User is already logged out") }
 }
 
-function logoutBTN(){
-   // console.log("Hello from button invoked Fn.", newUser)
-   if(newUser.logged_in){
-      newUser.logged_in = false
-      console.log(`User ${newUser.username} logged out due to inactivity.`)
-   }
-   else{ console.log("User is already logged out") }
-}
+setTimeout(() => logout(currentUser), 300000)
 
-var logoutBtn = document.getElementById('LogOut')
-// console.log(logoutBtn)
-logoutBtn.addEventListener('click', logoutBTN)
-
-setTimeout(() => logout(newUser), 300000)
-
-
-
-
-// var loggingoutTimer;
-
-// function logoutTimer() {
-//   loggingoutTimer = setTimeout(logout, 3600000); 
+// function logoutBTN(){
+//    // console.log("Hello from button invoked Fn.", newUser)
+//    if(newUser.logged_in){
+//       newUser.logged_in = false
+//       console.log(`User ${newUser.username} logged out due to inactivity.`)
+//    }
+//    else{ console.log("User is already logged out") }
 // }
+
+// var logoutBtn = document.getElementById('LogOut')
+// logoutBtn.addEventListener('click', logoutBTN)
 
 function resetLogoutTimer() {
-  clearTimeout(logout);
-  logout(newUser);
+//   clearTimeout(logout);
+//   logout(currentUser);
 }
-
-// function logout() {
-//   alert("You are Logged Out Please login again");
-//   window.location.href = "login.html"
-
-// }
-
-logout(newUser);
 
 document.addEventListener("mousemove", resetLogoutTimer);
 document.addEventListener("keypress", resetLogoutTimer);
