@@ -16,13 +16,13 @@ function fetchData() {
                           <h5 class="card-title"> ${product.price}</h5>
                           <p class="product-brand"><span class="data">${product.title}</span></p>
                           <p class="card-text"><span class="data">${product.category}</span></p>
-                          <p class="card-text"><span class="data">Description</span>${product.description}</p>
+                          <p class="card-text"><span class="data">Description </span>${product.description}</p>
                           <button class="btn btn-success show-details">Details</button>
-                          <button class="btn btn-success" onclick="addToCart(${product.id},currentUser)">Add to Cart</button>
+                          <button class="btn btn-success" onclick="addToCart(${product.id})">Add to Cart</button>
                       </div>
                   </div>
               </div>`;
-$(".card-title, .card-text").not(":eq(1)").hide();
+              $(".card-title, .card-text").hide()
 $(".show-details").click(function () 
 {
     var details = $(this).parent().parent().find(".card-title, .card-text").not(":eq(1)")
@@ -85,8 +85,9 @@ function fetchUser(user){
 // var Usr = fetchUser(newUser)
 let currentUser = JSON.parse(localStorage.getItem("Current User"))
 
-function addToCart(id, Usr) {
- var cart = Usr.cart;
+function addToCart(id) {
+    console.log(currentUser)
+ var cart = currentUser.cart;
  fetch('https://dummyjson.com/products/' + id)
    .then(res => res.json())
    .then(product => {
@@ -96,17 +97,17 @@ function addToCart(id, Usr) {
      } else {
        cart.push({ id: product.id, name: product.title, price: product.price, quantity: 1 });
      }
-     Usr.cart = cart
+     currentUser.cart = cart
      for (let i = 0; i < users.length; i++) {
-       if (Usr.username == users[i].username && users[i].logged_in == true){
-          // console.log("I'm here");
-          users[i] = Usr
-          // console.log(users[i]);
+       if (currentUser.username == users[i].username && users[i].logged_in == true){
+          console.log("I'm here");
+          users[i] = currentUser
+          console.log(users[i]);
           localStorage.setItem("users", JSON.stringify(users))
-          break
+          break;
        }
     }
     //  console.log(cart);
-     return Usr;
+     return currentUser;
    });
 }
