@@ -1,3 +1,4 @@
+
 import {newUser} from "./LoginSignup.js"
 // console.log(newUser);
 
@@ -17,15 +18,34 @@ document.addEventListener("DOMContentLoaded",function(){
                         <img src="${data.thumbnail}" class="card-img-top">
                         <div class="card-body">
                             <h5 class="card-title"> ${data.price}</h5>
-                            <p class="card-title"><span class="data">${data.title}</span></p>
+                            <p class="product-brand"><span class="data">${data.title}</span></p>
                             <p class="card-text"><span class="data">${data.category}</span></p>
-                            <p class="card-text"><span class="data">${data.description}</span> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            <p class="card-text"><span class="data">Description </span>${data.description}</p>
                             <button class="btn btn-success show-details">Details</button>
                             <button class="btn btn-success add-to-cart">Add to Cart</button>
                         </div>
                     </div>
                 </div>
-`
+` ;
+$(".add-to-cart").click(function () 
+  {
+      var name = $(this).parent().find(".card-title").text()
+      var price = $(this).parent().find(".card-text").eq(1).text()
+      alert("You have added " + name + " for " + price + " to your cart.")
+  })
+$(".card-title, .card-text").not(":eq(1)").hide();
+$(".show-details").click(function () 
+  {
+      var details = $(this).parent().parent().find(".card-title, .card-text").not(":eq(1)")
+      details.toggle()
+      if ($(this).text() == "Details") 
+      {
+          $(this).text("Hide")
+      } else 
+      {
+          $(this).text("Details")
+      }
+  })
   })
 })
 });
