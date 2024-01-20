@@ -3,32 +3,33 @@ import {newUser} from "./LoginSignup.js"
 
 
 document.addEventListener("DOMContentLoaded",function(){
-  let products = document.querySelector(".products");
+  let products = document.querySelector(".row");
   var json;
   fetch('https://dummyjson.com/products')
   .then(res=>res.json())
   .then(fetchedJson=> {
     json = fetchedJson;
-   //  console.log(json.products);
+    console.log(json.products);
     json.products.forEach(data => {
     products.innerHTML += `
-                <div class="product filter-item all mobiles">
-                   <div class="box">
-                     <div class="image">
-                       <img src="${data.thumbnail}" alt="">
-                     </div>
-                      <div class="text">
-                      <p class="category"> ${data.category}</p>
-                    <p class="product-name">${data.title}</p>
-                    <p class="price">${data.price}</p>
-                    <p class="description">${data.description}</p>
-             <button class="purchase" onclick="addToCart(${data.id})"><a target="_blank" href="./cart.html">Add to Cart</a></button>
+                          <div class="col-md-4">
+                          <div class="card">
+                        <img src="${data.thumbnail}" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title"> ${data.price}</h5>
+                            <p class="card-title"><span class="data">${data.title}</span></p>
+                            <p class="card-text"><span class="data">${data.category}</span></p>
+                            <p class="card-text"><span class="data">${data.description}</span> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            <button class="btn btn-success show-details">Details</button>
+                            <button class="btn btn-success add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            </div>`
+`
   })
 })
 });
+
 
 let users = JSON.parse(localStorage.getItem("users")) || []
 

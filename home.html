@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">   
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="home.css">
     <title>HOME</title>
 </head>
 <body>
@@ -39,12 +39,19 @@
             <h5> where fashion meets individuality, and every accessory tells a unique story</h5>
         </div>
       </section>
+      <!-- filter is here  -->
+      <div id="filters">
+        <label>Filter by Category:</label>
+        <select id="categoryFilter" onchange="filterProducts()">
+          <!-- <option value="all">All</option> -->
+        </select>
+      </div>
 
       <section class="products" id="products">     
         <div class="container mt-5">
             <div class="row">
                 <!-- Product 1 -->
-                <div class="col-md-4">
+                <!-- <div class="col-md-4">
                     <div class="card">
                         <img src="./imgs/ray-bin.jpg" class="card-img-top">
                         <div class="card-body">
@@ -56,10 +63,10 @@
                             <button class="btn btn-success add-to-cart">Add to Cart</button>
                         </div>
                     </div>
-                </div>
+                </div> -->
     
                 <!-- product 2 -->
-                <div class="col-md-4">
+                <!-- <div class="col-md-4">
                   <div class="card">
                       <img src="./imgs/7004455313_1.jpg" class="card-img-top">
                       <div class="card-body">
@@ -71,7 +78,7 @@
                           <button class="btn btn-success add-to-cart">Add to Cart</button>
                       </div>
                   </div>
-              </div>
+              </div> -->
 
           </div>
           </div>
@@ -160,5 +167,67 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
       <script src="script.js"></script>
+      <script type="module" src="fetchApi.js"></script>
+
+      <script>
+
+    function fetchData() {
+      return fetch('https://dummyjson.com/products')
+        .then(response => response.json())
+        .then(data => data.products); 
+    }
+
+    function showProducts(products) {
+      const productsContainer = document.querySelector('.row');
+      productsContainer.innerHTML = '';
+
+      products.forEach(product => {
+        productsContainer.innerHTML += `<div class="col-md-4">
+                          <div class="card">
+                        <img src="${product.thumbnail}" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title"> ${product.price}</h5>
+                            <p class="card-title"><span class="data">${product.title}</span></p>
+                            <p class="card-text"><span class="data">${product.category}</span></p>
+                            <p class="card-text"><span class="data">${product.description}</span> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            <button class="btn btn-success show-details">Details</button>
+                            <button class="btn btn-success add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>`;
+      });
+    }
+
+    function populateCategories(products) {
+      const categories = ['all', ...new Set(products.map(product => product.category))];
+      const categoryFilter = document.getElementById('categoryFilter');
+
+      categories.forEach(category => {
+        const option = document.createElement('option');
+        option.value = category;
+        option.text = category.charAt(0).toUpperCase() + category.slice(1); 
+        categoryFilter.appendChild(option);
+      });
+    }
+
+    function filterProducts() {
+      const selectedCategory = document.getElementById('categoryFilter').value;
+
+      fetchData()
+        .then(products => {
+          if (selectedCategory !== 'all') {
+            products = products.filter(product => product.category === selectedCategory);
+          }
+          showProducts(products);
+        });
+    }
+
+    fetchData()
+      .then(products => {
+        populateCategories(products);
+        showProducts(products);
+      })
+      .catch(error => console.error('Error fetching data:', error));
+      </script>
 </body>
 </html>
