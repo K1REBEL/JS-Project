@@ -13,7 +13,7 @@ function showProducts(products) {
                         <div class="card">
                       <img src="${product.thumbnail}" class="card-img-top">
                       <div class="card-body">
-                          <h5 class="card-title"> ${product.price}</h5>
+                          <h5 class="card-title"> ${product.price} $</h5>
                           <p class="product-brand"><span class="data">${product.title}</span></p>
                           <p class="card-text"><span class="data">${product.category}</span></p>
                           <p class="card-text"><span class="data">Description </span>${product.description}</p>
@@ -22,13 +22,13 @@ function showProducts(products) {
                       </div>
                   </div>
               </div>`;
-    $(".card-title, .card-text").not(":eq(1)").hide();
+    $(" .card-text").not(":eq(i)").hide();
     $(".show-details").click(function () {
       var details = $(this)
         .parent()
         .parent()
-        .find(".card-title, .card-text")
-        .not(":eq(1)");
+        .find(" .card-text")
+        .not(":eq(i)");
       details.toggle();
       if ($(this).text() == "Details") {
         $(this).text("Hide");
