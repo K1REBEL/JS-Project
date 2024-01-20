@@ -22,12 +22,12 @@ function showProducts(products) {
                       </div>
                   </div>
               </div>`;
-    $(".card-title, .card-text").not(":eq(i)").hide();
+    $(" .card-text").not(":eq(i)").hide();
     $(".show-details").click(function () {
       var details = $(this)
         .parent()
         .parent()
-        .find(".card-title, .card-text")
+        .find(" .card-text")
         .not(":eq(i)");
       details.toggle();
       if ($(this).text() == "Details") {
