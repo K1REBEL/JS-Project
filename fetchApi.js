@@ -57,8 +57,6 @@ function fetchUser(user){
    console.log("not found");
 }
 
-// var Usr = fetchUser(newUser)
-
 function addToCart(id, Usr) {
    var cart = Usr.cart;
    fetch('https://dummyjson.com/products/' + id)
