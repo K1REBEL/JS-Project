@@ -1,6 +1,3 @@
-import { newUser } from "./login.js"
-console.log(newUser);
-
 
 document.addEventListener("DOMContentLoaded",function(){
   let products = document.querySelector(".row");
@@ -21,17 +18,12 @@ document.addEventListener("DOMContentLoaded",function(){
                             <p class="card-text"><span class="data">${data.category}</span></p>
                             <p class="card-text"><span class="data">Description </span>${data.description}</p>
                             <button class="btn btn-success show-details">Details</button>
-                            <button class="btn btn-success add-to-cart">Add to Cart</button>
+                            <button class="btn btn-success add-to-cart" onclick="addToCart(${data.id}, currentUser)">Add to Cart</button>
                         </div>
                     </div>
                 </div>
 ` ;
-$(".add-to-cart").click(function () 
-  {
-      var name = $(this).parent().find(".card-title").text()
-      var price = $(this).parent().find(".card-text").eq(1).text()
-      alert("You have added " + name + " for " + price + " to your cart.")
-  })
+
 $(".card-title, .card-text").not(":eq(1)").hide();
 $(".show-details").click(function () 
   {
@@ -51,6 +43,8 @@ $(".show-details").click(function ()
 
 
 let users = JSON.parse(localStorage.getItem("users")) || []
+let currentUser = JSON.parse(localStorage.getItem("Current User"))
+console.log(currentUser);
 
 function fetchUser(user){
    for (let i = 0; i < users.length; i++) {
@@ -63,7 +57,7 @@ function fetchUser(user){
    console.log("not found");
 }
 
-var Usr = fetchUser(newUser)
+// var Usr = fetchUser(newUser)
 
 function addToCart(id, Usr) {
    var cart = Usr.cart;
@@ -79,10 +73,13 @@ function addToCart(id, Usr) {
        Usr.cart = cart
        for (let i = 0; i < users.length; i++) {
          if (Usr.username == users[i].username && users[i].logged_in == true){
-            // console.log("I'm here");
+            console.log("I'm here");
             users[i] = Usr
-            // console.log(users[i]);
+            
             localStorage.setItem("users", JSON.stringify(users))
+            localStorage.setItem("Current User", JSON.stringify(Usr))
+            console.log(users[i]);
+            console.log(Usr);
             break
          }
       }
@@ -91,10 +88,10 @@ function addToCart(id, Usr) {
      });
  }
 
- var as = addToCart(1, Usr);
+//  var as = addToCart(1, currentUser);
 
 // console.log(Usr);
 
-export {Usr}
+// export {Usr}
 
 
