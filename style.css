@@ -122,6 +122,10 @@ header .nav-toggle {
 
 /* Login & Signup style */
 
+.signup-form {
+    padding: 20px;
+}
+
 .login-container, .signup-container {
     max-width: 600px;
     margin: auto;
@@ -168,35 +172,85 @@ header .nav-toggle {
     color: #007bff;
 }
 
+.label-float {
+    font-size: 14px;
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    color: #495057;
+    transition: transform 0.3s, font-size 0.3s, color 0.3s;
+    background-color: #ffffff;
+    padding: 0 5px;
+    pointer-events: none; 
+}
 
+.form-group {
+    position: relative;
+    margin-bottom: 25px;
+}
 
-.btn-login{
-    font-size: 1em;
+.form-control {
+    background-color: #ffffff;
+    border: 1px solid #ced4da;
+    color: #495057;
+    padding: 15px;
+    border-radius: 15px; 
+    transition: border-color 0.3s;
+    width: 100%; 
+}
+
+.form-control:focus+.label-float,
+.form-control:not(:placeholder-shown)+.label-float {
+    transform: translateY(-20px);
+    font-size: 12px;
+    color: #007bff;
+}
+
+.form-control:focus {
+    outline: none; 
+}
+
+.col-md-6 {
+    position: relative;
+}
+
+.col-md-6 input {
+    z-index: 1;
+}
+
+.btn-login, .btn-success {
+    font-size: 1 em;
     color: #fff;
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     text-transform: uppercase;
     text-decoration: none;
     letter-spacing: 2px;
     transition: 0.5s;
-    max-width: 200px;
+    width: 80%; 
+    max-width: 250px; 
     font-weight: 400;
-    align-items: center;
     border: none;
     cursor: pointer;
+    margin: 0 auto; 
+    margin-top: 20px; 
     background-color: #136470;
-    }
-    
-    .btn-login:hover {
+    box-sizing: border-box; 
+}
+
+.btn-login:hover, .btn-success:hover {
     background-color: #187785;
     transform: scale(1.1);
-    }
-
+}
 
 @media (min-width: 768px) {
-    .button-signup {
-        padding: 13px 50px 13px;
+    .btn-login, .btn-success {
+        padding: 15px 50px; 
     }
 }
+
 
 .signup-link {
     text-align: center;
