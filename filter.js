@@ -76,17 +76,7 @@ fetchData()
 
 let users = JSON.parse(localStorage.getItem("users")) || []
 let currentUser = JSON.parse(localStorage.getItem("Current User"))
-console.log(currentUser)
-
-function fetchUser(user) {
-  for (let i = 0; i < users.length; i++) {
-    if (user.username == users[i].username && users[i].logged_in == true) {
-      // console.log(users[i])
-      return users[i]
-    }
-  }
-  console.log("not found")
-}
+// console.log(currentUser)
 
 function addToCart(id) {
   console.log(currentUser)
@@ -109,13 +99,13 @@ function addToCart(id) {
 
       currentUser.cart = cart
       for (let i = 0; i < users.length; i++) {
-        if (currentUser.username == users[i].username && users[i].logged_in == true) {
-          console.log("I'm here")
+        if (currentUser.username == users[i].username && users[i].logged_in) {
           users[i] = currentUser
-          console.log(users[i])
           localStorage.setItem("users", JSON.stringify(users))
           localStorage.setItem("Current User", JSON.stringify(currentUser))
           break
+        } else if(currentUser.username == users[i].username && users[i].logged_in == false){
+          alert('Please login first.')
         }
       }
       return currentUser
