@@ -2,9 +2,125 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #ecefec;
-    color: #495057;
 }
+
+header {
+    position: fixed;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    padding: 2px 2px;
+    z-index: 10000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.5s;
+    background-color: #fff;
+}
+    
+
+header.down {
+  background: #fff;
+  padding: 2px 2px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+}
+
+.logo img {
+    width: 70px; 
+    height: auto; 
+    margin-left: 10px;
+}
+
+header .navigation,
+.nav-cart {
+    position: relative;
+    display: flex;
+    align-items: center; 
+}
+
+header .nav-cart {
+    margin-left: auto; 
+}
+
+header .navigation {
+    margin-left: 10px; 
+}
+
+header .navigation li {
+    list-style: none;
+    margin-left: 30px;
+    margin-right: 10px; 
+    margin-top: 10px;
+}
+
+header .navigation li a {
+    text-decoration: none;
+    color: #111;
+    font-weight: 300;
+}
+
+header .navigation li a:hover {
+    color: #136470;
+    }
+    
+    header.down .navigation li a {
+    color: #111;
+    }
+    
+    header.down .navigation li a:hover {
+    color: #136470;
+    text-shadow: #136470;
+    text-decoration:overline;
+    }
+
+section {
+  padding: 100px;
+}
+
+.row {
+  position: relative;
+  width: 100%;
+  display: fixed;
+}
+
+
+header .nav-toggle {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  header .navigation {
+    display: none; 
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 0; 
+    width: 100%;
+    background-color: rgba(51, 51, 51, 0.7);
+  }
+
+  header .navigation.show {
+    display: flex; 
+  }
+
+  header .navigation li {
+    margin: 10px 0;
+  }
+
+  header .nav-toggle {
+    display: block;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+
+  header.down .nav-toggle,
+  header.down .navigation {
+    background-color: #fff;
+    color: #111;
+  }
+}
+
+/* Login & Signup style */
 
 .login-container, .signup-container {
     max-width: 600px;
@@ -52,42 +168,29 @@ body {
     color: #007bff;
 }
 
-.btn-login,
-.btn-signup {
-    font-size: 14px;
-    font-weight: 100;
-    letter-spacing: 1px;
-    padding: 13px 20px 13px;
-    outline: 0;
-    border: 1px solid black;
-    cursor: pointer;
-    margin-left: 0;
-    background-color: #3ea23e;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    border-radius: 15px; 
+
+
+.btn-login{
+    font-size: 1em;
     color: #fff;
-}
+    display: inline-block;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 2px;
+    transition: 0.5s;
+    max-width: 200px;
+    font-weight: 400;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+    background-color: #136470;
+    }
+    
+    .btn-login:hover {
+    background-color: #187785;
+    transform: scale(1.1);
+    }
 
-.btn-login.button-signup:after,
-.btn-signup.button-signup:after {
-    content: "";
-    background-color: #236023;
-    width: 100%;
-    z-index: -1;
-    position: absolute;
-    height: 100%;
-    top: 7px;
-    left: 7px;
-    transition: 0.2s;
-}
-
-.button-signup:hover:after,
-.btn-signup:hover:after {
-    top: 0px;
-    left: 0px;
-}
 
 @media (min-width: 768px) {
     .button-signup {
@@ -101,5 +204,33 @@ body {
 }
 
 .signup-link a {
-    color: #418542;
+    color: #187785;
 }
+
+
+footer {
+    background-color: #24262b;
+    padding: 20px 0;
+    text-align: center;
+    border-top: 2px solid #dee2e6;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    }
+    
+    .disclaimer {
+    text-align: left;
+    margin-bottom: 10px;
+    color: #495057;
+    }
+    
+    .linkedin-icons a {
+    color: #495057;
+    text-decoration: none;
+    margin-right: 20px;
+    transition: color 0.3s ease;
+    }
+    
+    .social-links a :hover {
+    color:#d45017;
+    }

@@ -1,6 +1,6 @@
 header {
     position: fixed;
-    top: 10px;
+    top: 0px;
     left: 0;
     width: 100%;
     padding: 2px 2px;
@@ -54,18 +54,18 @@ header .navigation li a {
 }
 
 header .navigation li a:hover {
-  color: rgb(25, 73, 25);
-}
-
-header.down .navigation li a {
-  color: #111;
-}
-
-header.down .navigation li a:hover {
-  color: rgb(25, 73, 25);
-  text-shadow: rgb(41, 94, 41);
-  text-decoration:overline;
-}
+    color: #136470;
+    }
+    
+    header.down .navigation li a {
+    color: #111;
+    }
+    
+    header.down .navigation li a:hover {
+    color: #136470;
+    text-shadow: #136470;
+    text-decoration:overline;
+    }
 
 section {
   padding: 100px;
