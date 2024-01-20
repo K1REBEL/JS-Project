@@ -48,20 +48,20 @@ document.addEventListener("DOMContentLoaded", function ()
 //       alert("You have added " + name + " for " + price + " to your cart.")
 //   })
 
-//   $(".card-title, .card-text").not(":eq(1)").hide()
+  // $(".card-title, .card-text").not(":eq(1)").hide()
 
-//   $(".show-details").click(function () 
-//   {
-//       var details = $(this).parent().parent().find(".card-title, .card-text").not(":eq(1)")
-//       details.toggle()
-//       if ($(this).text() == "Details") 
-//       {
-//           $(this).text("Hide")
-//       } else 
-//       {
-//           $(this).text("Details")
-//       }
-//   })
+  // $(".show-details").click(function () 
+  // {
+  //     var details = $(this).parent().parent().find(".card-title, .card-text").not(":eq(1)")
+  //     details.toggle()
+  //     if ($(this).text() == "Details") 
+  //     {
+  //         $(this).text("Hide")
+  //     } else 
+  //     {
+  //         $(this).text("Details")
+  //     }
+  // })
 // })
 
 // import {newUser} from "./LoginSignup.js"
