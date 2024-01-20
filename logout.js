@@ -1,7 +1,7 @@
 
 let users = JSON.parse(localStorage.getItem("users")) || []
 let currentUser = JSON.parse(localStorage.getItem("Current User"))
-console.log(currentUser)
+// console.log(currentUser)
 
 function logout(user) {
    if(user.logged_in){
